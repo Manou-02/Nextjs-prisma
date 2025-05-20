@@ -1,11 +1,9 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export const GET = async (req: Request, context: any) => {
+export const GET = async (_: Request, context: any) => {
   try {
     const { id } = await context.params;
-
-    console.log("aaaa", id);
 
     const data = await prisma.user
       .findFirst({
